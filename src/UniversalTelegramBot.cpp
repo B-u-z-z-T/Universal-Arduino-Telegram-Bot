@@ -573,7 +573,7 @@ bool UniversalTelegramBot::sendMessage(const String& chat_id, const String& text
     payload["parse_mode"] = parse_mode;
 
   if (silent) // if the message should be sent silently (no ringtone) - default is not silent
-    payload["disable_notification"] = silent;
+    payload["disable_notification"] = true;
 
   return sendPostMessage(payload.as<JsonObject>(), message_id); // if message id == 0 then edit is false, else edit is true
 }
